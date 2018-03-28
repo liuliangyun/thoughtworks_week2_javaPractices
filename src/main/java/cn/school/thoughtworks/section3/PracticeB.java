@@ -6,7 +6,14 @@ import java.util.Map;
 public class PracticeB {
     Map<String,Integer> createUpdatedCollection(Map<String,Integer> collectionA, Map<String,List<String>> object) {
         //实现练习要求，并改写该行代码。
-
-        return null;
+        List<String> list2 = object.get("value");
+        for (String s : collectionA.keySet()) {
+            if (list2.contains(s)) {
+                int count = collectionA.get(s);
+                int num = count - count / 3;
+                collectionA.put(s, num);
+            }
+        }
+        return collectionA;
     }
 }
